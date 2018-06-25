@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FlatViewer">
+   <children>
+      <ImageView fx:id="display" fitHeight="503.0" fitWidth="674.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="15.0" />
+      <Pane layoutX="4.0" layoutY="347.0" prefWidth="666.0" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="347.0">
+         <children>
+            <Button fx:id="forward" layoutX="283.0" layoutY="19.0" mnemonicParsing="false" onAction="#moveForward" prefHeight="35.0" prefWidth="100.0" text="Go forward" />
+            <ImageView fx:id="forwardArrow" fitHeight="55.0" fitWidth="25.0" layoutX="320.0" layoutY="-14.0" pickOnBounds="true" rotate="-90.0">
+               <image>
+                  <Image url="file:sourcePics/arrow.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="back" layoutX="283.0" layoutY="72.0" mnemonicParsing="false" onAction="#back" prefHeight="35.0" prefWidth="100.0" text="Look back" />
+            <ImageView fx:id="goBackArr" fitHeight="55.0" fitWidth="25.0" layoutX="321.0" layoutY="86.0" pickOnBounds="true" rotate="90.0">
+               <image>
+                  <Image url="file:sourcePics/arrow.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="left" layoutX="188.0" layoutY="46.0" mnemonicParsing="false" onAction="#left" prefHeight="35.0" prefWidth="85.0" text="Look left" textAlignment="CENTER" />
+            <ImageView fx:id="lookLeftArr" fitHeight="39.0" fitWidth="35.0" layoutX="163.0" layoutY="44.0" pickOnBounds="true" rotate="180.0">
+               <image>
+                  <Image url="file:sourcePics/arrow.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="right" layoutX="393.0" layoutY="45.0" mnemonicParsing="false" onAction="#right" prefHeight="35.0" prefWidth="85.0" text="Look right" />
+            <ImageView fx:id="lookRightArr" fitHeight="39.0" fitWidth="34.0" layoutX="468.0" layoutY="44.0" pickOnBounds="true">
+               <image>
+                  <Image url="file:sourcePics/arrow.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="message" layoutX="30.0" layoutY="132.0" prefHeight="26.0" prefWidth="602.0" />
+         </children>
+      </Pane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1c1c97" height="520.0" layoutX="674.0" stroke="BLACK" strokeType="INSIDE" width="5.0" />
+      <Label layoutX="719.0" layoutY="6.0" prefHeight="28.0" prefWidth="100.0" text="Items carried">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dadcdd" height="76.0" layoutX="726.0" layoutY="42.0" opacity="0.5" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="76.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dadcdd" height="76.0" layoutX="727.0" layoutY="133.0" opacity="0.5" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="76.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dadcdd" height="76.0" layoutX="728.0" layoutY="222.0" opacity="0.5" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="76.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dadcdd" height="76.0" layoutX="729.0" layoutY="312.0" opacity="0.5" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="76.0" />
+      <Rectangle fx:id="tambPanel" arcHeight="5.0" arcWidth="5.0" fill="#dadcdd" height="76.0" layoutX="729.0" layoutY="406.0" opacity="0.5" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="76.0" />
+      <MenuBar prefHeight="29.0" prefWidth="674.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="176.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Map">
+            <items>
+              <MenuItem fx:id="showMap" mnemonicParsing="false" onAction="#showMapM" text="Show map" />
+                  <MenuItem fx:id="hideMap" mnemonicParsing="false" onAction="#hideMapM" text="Hide map" />
+                  <MenuItem fx:id="whereAm" mnemonicParsing="false" onAction="#whereAmM" text="Where am I?" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Item">
+              <items>
+                <MenuItem fx:id="grab" mnemonicParsing="false" onAction="#grabM" text="Grab" />
+                  <MenuItem fx:id="drop" mnemonicParsing="false" onAction="#dropM" text="Drop" />
+                  <MenuItem fx:id="whatItems" mnemonicParsing="false" onAction="#whatItemsM" text="What do I do with the items?" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <ImageView fx:id="mapPanel" fitHeight="76.0" fitWidth="76.0" layoutX="725.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:sourcePics/map.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="ukulelePanel" fitHeight="76.0" fitWidth="76.0" layoutX="727.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="djembePanel" fitHeight="76.0" fitWidth="76.0" layoutX="728.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="trumpetPanel" fitHeight="76.0" fitWidth="76.0" layoutX="729.0" layoutY="314.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="tambourinePanel" fitHeight="76.0" fitWidth="76.0" layoutX="729.0" layoutY="406.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ukuleleLR" fitHeight="76.0" fitWidth="76.0" layoutX="337.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="trumpetLR" fitHeight="76.0" fitWidth="76.0" layoutX="375.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="djembeLR" fitHeight="76.0" fitWidth="76.0" layoutX="201.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="tambourineLR" fitHeight="76.0" fitWidth="76.0" layoutX="174.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ukulele" fitHeight="76.0" fitWidth="76.0" layoutX="337.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="trumpet" fitHeight="76.0" fitWidth="76.0" layoutX="387.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="tambourine" fitHeight="76.0" fitWidth="76.0" layoutX="239.0" layoutY="284.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="djembe" fitHeight="122.0" fitWidth="100.0" layoutX="400.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="mapDisplay" fitHeight="317.0" fitWidth="406.0" layoutX="159.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>
